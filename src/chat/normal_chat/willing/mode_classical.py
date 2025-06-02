@@ -56,6 +56,9 @@ class ClassicalWillingManager(BaseWillingManager):
         if is_emoji_not_reply:
             reply_probability = 0
 
+        if not willing_info.group_info:
+            reply_probability = 1
+
         return reply_probability
 
     async def before_generate_reply_handle(self, message_id):

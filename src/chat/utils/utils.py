@@ -335,7 +335,7 @@ def process_llm_response(text: str) -> list[str]:
     pattern = re.compile(r"[(\[（](?=.*[一-鿿]).*?[)\]）]")
     # _extracted_contents = pattern.findall(text)
     cleaned_text = protected_text
-    # cleaned_text = pattern.sub("", protected_text)
+    # cleaned_text = pattern.sub("", protected_text) #去除 () 和 [] 及其包裹的内容
 
     if cleaned_text == "":
         return ["呃呃"]
